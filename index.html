@@ -1,0 +1,154 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+  <title>弹幽灵</title>
+<!--  <link rel="apple-touch-icon" href="img/game-icon.png">-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="user-scalable=0, initial-scale=1, minimum-scale=1, maximum-scale=1, width=device-width, minimal-ui=1">
+    
+    
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+    
+    
+</head>
+<body>
+  <div id="flappy2">
+  
+    <div class="jin" id="cv">
+
+        <div class="jin01"></div>
+
+    </div>
+    
+  </div>
+    
+  <a href="http://mp.weixin.qq.com/mp/redirect?url=https%3A%2F%2Fitunes.apple.com%2Fcn%2Fapp%2Fxiong-hai-zi-xiang-ce%2Fid923813088" onclick="_hmt.push(['_trackEvent', 'game', 'youling'])" target="_blank">
+    
+  <div class="adv">
+  
+      <span class="adv01"></span>
+      <span class="adv02">下载熊孩子相册</span>
+      <span class="adv03"></span>
+    
+  </div>
+      
+  </a>    
+    
+
+    
+   
+
+</body>
+    
+<script type="text/javascript">
+    
+    var score01 = 0;
+    
+    var jumpli = -400;
+    
+    var gravli = 1100;
+    
+    var mode = '[火星模式]';
+    
+document.getElementById("cv").addEventListener("touchend", touchEnd, false);
+
+document.getElementById("cv").addEventListener("MSPointerUp", touchEnd, false);
+
+          
+            function touchEnd(event) {
+
+/*                   event.preventDefault();*/
+                
+
+
+                document.getElementById("cv").style.display="none";
+                
+            }
+
+    
+
+</script>
+    
+  <script src="js/phaser.min.js"></script>
+  <script src="js/game.js"></script>
+  <script type="text/javascript" src="js/WeixinApi.js"></script>
+    
+<script type="text/javascript">
+    
+    console.log(score01);
+    
+// 所有功能必须包含在 WeixinApi.ready 中进行 虐出翔了！！一夜之间在朋友圈火了的小游戏
+WeixinApi.ready(function(Api){
+ 
+    // 微信分享的数据
+    var wxData = {
+        "imgUrl" : 'http://baobao.ma/game/dist/assets/mars.jpg',
+        "link" : 'http://baobao.ma/game/dist',
+        "desc": '快来测试你能在火星生存吗',
+        "title": '虐出翔了！！一夜之间在朋友圈火了的小游戏'
+        
+    };
+    
+/*超难台语四六级考试,自由行前必看哦*/
+
+    // 分享的回调
+    var wxCallbacks = {
+        // 分享操作开始之前
+        ready:function () {
+            // 你可以在这里对分享的数据进行重组
+                if( score01 > 0 && score01 <= 15){
+                wxData.desc = "吐血了！我竟然过了" + score01 +"关，你能过几关" + mode;
+
+                }
+            
+                else if( score01 > 15 ){
+                wxData.desc = "活儿好又持久！我竟然过了" + score01 +"关，你能过几关" + mode;
+
+                }
+            
+            
+        },
+        // 分享被用户自动取消
+        cancel:function (resp) {
+            // 你可以在你的页面上给用户一个小Tip，为什么要取消呢？
+        },
+        // 分享失败了
+        fail:function (resp) {
+            // 分享失败了，是不是可以告诉用户：不要紧，可能是网络问题，一会儿再试试？
+        },
+        // 分享成功
+        confirm:function (resp) {
+            // 分享成功了，我们是不是可以做一些分享统计呢？
+        },
+        // 整个分享过程结束
+        all:function (resp) {
+            // 如果你做的是一个鼓励用户进行分享的产品，在这里是不是可以给用户一些反馈了？
+        }
+    };
+ 
+    // 用户点开右上角popup菜单后，点击分享给好友，会执行下面这个代码
+    Api.shareToFriend(wxData, wxCallbacks);
+ 
+    // 点击分享到朋友圈，会执行下面这个代码
+    Api.shareToTimeline(wxData, wxCallbacks);
+ 
+    // 点击分享到腾讯微博，会执行下面这个代码
+    Api.shareToWeibo(wxData, wxCallbacks);
+    
+    // iOS上，可以直接调用这个API进行分享，一句话搞定
+    Api.generalShare(wxData,wxCallbacks);
+});
+</script>
+    
+<!-- 百度统计 -->
+<script type="text/javascript">
+		var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+		document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F75e80c2b6b6a61993881345a31831197' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+</html>

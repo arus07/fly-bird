@@ -1,0 +1,71 @@
+body {
+  background-color: #333;
+  margin:0;
+}
+
+#flappy2 {
+  width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  background-color: #000;
+}
+
+
+
+.adv{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    background-color:rgba(0,0,0,0.5);
+
+}
+
+.adv01{
+    display:inline-block;
+    background:url(../assets/adv01.png) no-repeat;
+    width:32px;
+    height:32px;
+    background-size: 32px;
+    vertical-align: middle;
+    margin:5px 5px;
+
+}
+
+.adv02{
+    font-family: '微软雅黑';
+    font-size:22px;
+    color:#fff;
+    display:inline-block;
+    vertical-align: middle;
+    margin-right:10px;
+}
+
+.adv03{
+    display:inline-block;
+    background:url(../assets/close.png) no-repeat;
+    width:24px;
+    height:24px;
+    background-size: 24px;
+    vertical-align: middle;
+}
+
+.jin{
+    background-color: rgba(0,0,0,0.6);
+    width:320px;
+    height:480px;
+    position:absolute;
+    z-index:1;
+    display:none;
+}
+
+.jin01{
+    background:url(../assets/share.png) no-repeat;
+    width:243px;
+    height:114px;
+    position:absolute;
+    right:0;
+    top:0;
+    z-index:2;
+}
